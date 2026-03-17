@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Governance_Stage__c</fullName>
+    <label>Governance Stage</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>GEC Strategic Test</fullName>
+                <default>true</default>
+                <label>GEC Strategic Test</label>
+            </value>
+            <value>
+                <fullName>Bid/No Bid</fullName>
+                <default>false</default>
+                <label>Bid/No Bid</label>
+            </value>
+            <value>
+                <fullName>Doability</fullName>
+                <default>false</default>
+                <label>Doability</label>
+            </value>
+            <value>
+                <fullName>Deal Forum</fullName>
+                <default>false</default>
+                <label>Deal Forum</label>
+            </value>
+            <value>
+                <fullName>Commercial Test</fullName>
+                <default>false</default>
+                <label>Commercial Test</label>
+            </value>
+            <value>
+                <fullName>RFP Submission</fullName>
+                <default>false</default>
+                <label>RFP Submission</label>
+            </value>
+            <value>
+                <fullName>BAFO Approved</fullName>
+                <default>false</default>
+                <label>BAFO</label>
+            </value>
+            <value>
+                <fullName>Detailed Test</fullName>
+                <default>false</default>
+                <label>Detailed Test</label>
+            </value>
+            <value>
+                <fullName>Legal Test</fullName>
+                <default>false</default>
+                <label>Legal Test</label>
+            </value>
+            <value>
+                <fullName>Contract signed</fullName>
+                <default>false</default>
+                <label>Contract signed</label>
+            </value>
+            <value>
+                <fullName>Rejected</fullName>
+                <default>false</default>
+                <label>Rejected</label>
+            </value>
+            <value>
+                <fullName>Approved</fullName>
+                <default>false</default>
+                <label>Approved</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

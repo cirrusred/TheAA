@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Governance_Approvals_Internal_Governance</fullName>
+    <filterScope>Queue</filterScope>
+    <label>Internal Governance Approvals</label>
+    <queue>Internal_Governance_Approvals</queue>
+    <sharedTo>
+        <allInternalUsers></allInternalUsers>
+    </sharedTo>
+</ListView>

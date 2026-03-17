@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Variable_Margin_YTD__c</fullName>
+    <description>data point for variable margin for this account year to date</description>
+    <inlineHelpText>Contains the variable margin for this account year to date</inlineHelpText>
+    <label>Variable Margin YTD</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Percent</type>
+</CustomField>

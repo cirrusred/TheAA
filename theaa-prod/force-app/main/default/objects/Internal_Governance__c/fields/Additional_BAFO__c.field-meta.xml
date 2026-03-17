@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_BAFO__c</fullName>
+    <description>Captures the current iteration of the BAFO supplied to the customer</description>
+    <inlineHelpText>Enter the current iteration of the BAFO issued, ensure you update the date field to reflect the latest issue</inlineHelpText>
+    <label>Additional BAFO</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>2nd BAFO</fullName>
+                <default>false</default>
+                <label>2nd BAFO</label>
+            </value>
+            <value>
+                <fullName>3rd BAFO</fullName>
+                <default>false</default>
+                <label>3rd BAFO</label>
+            </value>
+            <value>
+                <fullName>4th BAFO</fullName>
+                <default>false</default>
+                <label>4th BAFO</label>
+            </value>
+            <value>
+                <fullName>6th BAFO</fullName>
+                <default>false</default>
+                <label>6th BAFO</label>
+            </value>
+            <value>
+                <fullName>7th BAFO</fullName>
+                <default>false</default>
+                <label>7th BAFO</label>
+            </value>
+            <value>
+                <fullName>8th BAFO</fullName>
+                <default>false</default>
+                <label>8th BAFO</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
+    <decisions>
+        <name>Is_the_Contract_Sector_Drivetech</name>
+        <label>Is the Contract Sector &apos;Drivetech&apos;</label>
+        <locationX>182</locationX>
+        <locationY>323</locationY>
+        <defaultConnectorLabel>Drivetech</defaultConnectorLabel>
+        <rules>
+            <name>All_Other_Sectors</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Related_Won_Opportunity__r.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Drivetech</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Update_Status_Sector</targetReference>
+            </connector>
+            <label>All Other Sectors</label>
+        </rules>
+    </decisions>
+    <description>Flow to automatically move contracts to activated to save users doing it</description>
+    <environments>Default</environments>
+    <interviewLabel>Update Contracts to Activated {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Update Contracts to Activated</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <description>Moves the contract status to &apos;Activated&apos; and pull the Sector from the Opportunity</description>
+        <name>Update_Status_Sector</name>
+        <label>Update Status &amp; Sector</label>
+        <locationX>50</locationX>
+        <locationY>431</locationY>
+        <inputAssignments>
+            <field>Sector__c</field>
+            <value>
+                <elementReference>$Record.Related_Won_Opportunity__r.Sector__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Status</field>
+            <value>
+                <stringValue>Activated</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>56</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Is_the_Contract_Sector_Drivetech</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Status</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Draft</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Sector__c</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Drivetech</stringValue>
+            </value>
+        </filters>
+        <object>Contract</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

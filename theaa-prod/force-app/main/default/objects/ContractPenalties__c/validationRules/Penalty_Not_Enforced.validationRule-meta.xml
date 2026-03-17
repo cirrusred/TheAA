@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Penalty_Not_Enforced</fullName>
+    <active>true</active>
+    <description>If the penalty wasnt enforced what was the reason</description>
+    <errorConditionFormula>NOT ( Penalty_Enforced__c ) &amp;&amp;  ISBLANK( Penalty_Not_Enforced_Reason__c )</errorConditionFormula>
+    <errorDisplayField>Penalty_Not_Enforced_Reason__c</errorDisplayField>
+    <errorMessage>Please provide a reason the penalty was not enforced.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Actual_amount_enforced__c</fullName>
+    <description>Requirement to enter the actual amount paid for a penalty as it may not be the full amount initially being sought by the Customer</description>
+    <inlineHelpText>Enter the actual Contract Penalty amount agreed to be paid for this period</inlineHelpText>
+    <label>Actual amount enforced</label>
+    <precision>10</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Currency</type>
+</CustomField>
