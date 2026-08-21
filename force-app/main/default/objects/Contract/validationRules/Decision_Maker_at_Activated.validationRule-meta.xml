@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decision_Maker_at_Activated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  ISPICKVAL( Status , &quot;Activated&quot;), 
+OR(  Account.Number_of_Decision_Maker_Contacts__c   = 0, ISNULL(Account.Number_of_Decision_Maker_Contacts__c )))</errorConditionFormula>
+    <errorMessage>Please ensure you have created a Decision Maker Contact associated to the Account before moving the Contract to Activated.</errorMessage>
+</ValidationRule>
