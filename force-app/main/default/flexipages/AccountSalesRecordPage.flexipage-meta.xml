@@ -2829,26 +2829,6 @@
                 <identifier>RecordExpired_Contracts_Drivetech_cField</identifier>
             </fieldInstance>
         </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Account_Closed_Roadside__c</fieldItem>
-                <identifier>RecordAccount_Closed_Roadside_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Account_Closed_Police__c</fieldItem>
-                <identifier>RecordAccount_Closed_Police_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
         <name>Facet-618a2e16-7bf2-4849-a851-7c14511e9ada</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -2928,26 +2908,6 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.Active_Contracts_Vixa_Pro__c</fieldItem>
                 <identifier>RecordActive_Contracts_Vixa_Pro_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Account_Closed_SMR__c</fieldItem>
-                <identifier>RecordAccount_Closed_SMR_cField</identifier>
-            </fieldInstance>
-        </itemInstances>
-        <itemInstances>
-            <fieldInstance>
-                <fieldInstanceProperties>
-                    <name>uiBehavior</name>
-                    <value>none</value>
-                </fieldInstanceProperties>
-                <fieldItem>Record.Account_Closed_VIXA__c</fieldItem>
-                <identifier>RecordAccount_Closed_VIXA_cField</identifier>
             </fieldInstance>
         </itemInstances>
         <name>Facet-7c367293-2987-419a-8514-6e5bd7986587</name>
