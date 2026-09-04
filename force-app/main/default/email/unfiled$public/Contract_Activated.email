@@ -1,0 +1,15 @@
+Dear {{{Recipient.FirstName}}}
+
+Please take this email as confirmation this opportunity has not been approved. Please schedule a review to discuss this and agree next steps.
+
+Opportunity - {!Contract.Related_Won_Opportunity__c}
+Contract Name - {!Contract.Name}
+Contract Start Date - {!Contract.StartDate}
+
+Click here to view the contract - {{{Contract.Contract_View_URL__c}}}
+
+Best Regards, 
+
+{{{Sender.FirstName}}}
+
+{{{Sender.Name}}}

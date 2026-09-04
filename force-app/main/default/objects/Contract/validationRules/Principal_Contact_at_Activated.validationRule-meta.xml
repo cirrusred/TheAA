@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Principal_Contact_at_Activated</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  ISPICKVAL( Status , &quot;Activated&quot;), 
+OR( Account.Number_of_Principal_Contacts__c  = 0, ISNULL(Account.Number_of_Principal_Contacts__c)))</errorConditionFormula>
+    <errorMessage>Please ensure you have created a Principal Contact associated to the Account before moving the Contract to Activated.</errorMessage>
+</ValidationRule>

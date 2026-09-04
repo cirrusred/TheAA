@@ -1,0 +1,17 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;"><span style="font-size:12px;"><span style="font-family:Tahoma,Arial,Helvetica,sans-serif;">Please take this email as confirmation this opportunity has been activated.<br />
+<br />
+Contract Name -&nbsp;{{{Contract.Name}}}<br />
+Opportunity - {{{Contract.Related_Won_Opportunity__c}}}<br />
+Contract Start Date -&nbsp;{{{Contract.StartDate}}}<br />
+Contract Term -&nbsp;{{{Contract.ContractTerm}}}<br />
+<br />
+Click here to view the contract -&nbsp;{{{Contract.Contract_View_URL__c}}}<br />
+<br />
+Best Regards,&nbsp;<br />
+<br />
+{{{Sender.Name}}}</span></span></body>
+</html>

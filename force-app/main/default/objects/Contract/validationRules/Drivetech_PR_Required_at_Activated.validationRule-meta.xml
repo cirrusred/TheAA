@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drivetech_PR_Required_at_Activated</fullName>
+    <active>true</active>
+    <description>Validation to ensure required price review is created before moving a contract to signed.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status, &quot;Activated&quot;),ISPICKVAL(Sector__c, &quot;Drivetech&quot;),
+ISPICKVAL( Contract_Type__c , &quot;Master Contract&quot;),
+OR( Number_of_Price_Reviews__c   = 0,  ISNULL(Number_of_Price_Reviews__c ) ))</errorConditionFormula>
+    <errorMessage>Please ensure you have created a price review record before moving your contract to activated.</errorMessage>
+</ValidationRule>
