@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Contract_activated</fullName>
+        <ccEmails>ellie.brown@formidableminds.com</ccEmails>
+        <description>Contract activated</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Contract_Activated_Email_1786628778218</template>
+    </alerts>
+</Workflow>
