@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email for Contract Activated Notification</description>
+    <encodingKey>ISO-8859-1</encodingKey>
+    <name>Contract Activated Email</name>
+    <relatedEntityType>Contract</relatedEntityType>
+    <style>none</style>
+    <subject>Contract Activated - {{{Contract.Name}}}</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

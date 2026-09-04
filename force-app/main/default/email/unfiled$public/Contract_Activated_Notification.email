@@ -1,0 +1,7 @@
+Please take this email as confirmation this opportunity has been activated.
+
+Opportunity - {!Contract.Related_Won_Opportunity__c}
+Contract Name - {!Contract.Name} 
+Contract Start Date - {!Contract.StartDate}
+
+Click here to view the contract - {!Contract.Contract_View_URL__c}
