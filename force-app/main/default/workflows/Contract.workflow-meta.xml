@@ -1,6 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
     <alerts>
+        <fullName>Contract_Approved</fullName>
+        <description>Contract Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Contract_is_Approved_Accident_Management_1732274153147</template>
+    </alerts>
+    <alerts>
         <fullName>Contract_activated</fullName>
         <ccEmails>ellie.brown@formidableminds.com</ccEmails>
         <description>Contract activated</description>
@@ -11,4 +21,126 @@
         <senderType>CurrentUser</senderType>
         <template>ApprovalEmails/Contract_Activated_Email_1786628778218</template>
     </alerts>
+    <alerts>
+        <fullName>Contract_is_Rejected</fullName>
+        <description>Contract is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Opportunity_is_Rejected_1716891881657</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_is_RejectedV2</fullName>
+        <description>Contract is Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Sales_Support_Contract_Rejected_1718098276362</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_submitted_for_Approval</fullName>
+        <description>Contract submitted for Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <recipient>Sales_Support</recipient>
+            <type>group</type>
+        </recipients>
+        <recipients>
+            <recipient>kim.allen@drivetech.co.uk</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Contract_Approval_Email_1716891764155</template>
+    </alerts>
+    <alerts>
+        <fullName>Contract_to_be_Prepared</fullName>
+        <description>Contract to be Prepared</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <recipients>
+            <recipient>emily.luckens@drivetech.co.uk</recipient>
+            <type>user</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Contract_is_ready_to_be_prepared_1716892025369</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Approval</fullName>
+        <description>Sales Support Approval</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Sales_Support_Contract_Approved_1718097933058</template>
+    </alerts>
+    <alerts>
+        <fullName>Sales_Support_Rejected</fullName>
+        <description>Sales Support Rejected</description>
+        <protected>false</protected>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>ApprovalEmails/Sales_Support_Contract_Rejected_1718098276362</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>In_Approval</fullName>
+        <description>Update status to &apos;In Approval&apos;</description>
+        <field>Status</field>
+        <literalValue>In Approval Process</literalValue>
+        <name>In Approval</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Move_to_Draft</fullName>
+        <description>On this rejection it moves status back to Draft</description>
+        <field>Status</field>
+        <literalValue>Draft</literalValue>
+        <name>Move to Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Revert_to_Draft</fullName>
+        <field>Status</field>
+        <literalValue>Draft</literalValue>
+        <name>Revert to Draft</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Approved</fullName>
+        <description>Updates the status to approved</description>
+        <field>Status</field>
+        <literalValue>Approved</literalValue>
+        <name>Status Approved</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Status_Draft_after_Rejection</fullName>
+        <field>Status</field>
+        <literalValue>Draft</literalValue>
+        <name>Status Draft after Rejection</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
 </Workflow>
