@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Drivetech_Cases</fullName>
+    <active>true</active>
+    <businessProcess>Drivetech Customer Support</businessProcess>
+    <description>Created as part of Horizon One (May 2024)</description>
+    <label>Drivetech Cases</label>
+    <picklistValues>
+        <picklist>Case_Category_Reason__c</picklist>
+        <values>
+            <fullName>Account Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Creation%2FConfiguration%2FDeletion</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Assessments</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bespoke Comms%2Ftemplates%2Fwhitelabel</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Complaint</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Confirmation resent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Course details confirmed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DT closing due to no activity%2FUnable to make contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DT opted to exit agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Data query %28quality%2Faccuracy%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Dates sent</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delegate swaps</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Escalated to IT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FleetData</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Administration%2FCeased trading</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal cost savings%2Fbudget restraints</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Intervention query %28text%2Fvideo%2FElearning%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invite%2FAdded to FRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junk or Spam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Leaving introducer%2Fleasing provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Licence checking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moved to different provider - price related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Moved to different provider - service related</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No longer require service%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On-road</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>P2D</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PO%2FInvoice query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Parent%2FThird Party company merger or move</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password reset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Permissions change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor internal compliance%2Fuptake of service%28s%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Poor system performance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rebooking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reinstate drivers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SSO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service%28s%29 included with new provider%2Finsurer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starter%2Fmover%2Fleaver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Starters%2FMovers%2FLeavers</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>System queries</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taking service in-house</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Teams meeting emails</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tender</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer availability</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trainer query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Creation%2C Changes and Removals</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Merges</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vehicle de-fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Venue Address Requested</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>e-signature link expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eLearning</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Case_Queue__c</picklist>
+        <values>
+            <fullName>Commercial Bookings</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commercial Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>International Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SDM - Drivetech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tell Me More</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Customer Ops Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal - PRF</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Web</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>High</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Low</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Medium</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customer Ops Team</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sector__c</picklist>
+        <values>
+            <fullName>AAX</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Accident Management</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Commissioning Force</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Drivetech</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FI%26P</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet %26 Leasing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>OEM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Prestige</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>SME</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>4x4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Closure - Bad leaver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Closure - Do Not Touch</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Account Closure - Good Leaver</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CPC</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DQM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>DriverPortal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FRM</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fleet</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HALO</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>HALO Insights</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Junk</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Police%2FHighways%2FFORS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Taxi</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trailor Towing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Workshop</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

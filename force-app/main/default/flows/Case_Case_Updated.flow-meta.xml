@@ -4,7 +4,7 @@
         <description>Email case creator that the changes are completed</description>
         <name>Email_Case_Creator</name>
         <label>Email Case Creator</label>
-        <locationX>578</locationX>
+        <locationX>2074</locationX>
         <locationY>863</locationY>
         <actionName>Case.Account_Change_is_Complete</actionName>
         <actionType>emailAlert</actionType>
@@ -24,7 +24,7 @@
         <description>Identifies if the case relates to a PRF (Order) or for a close account for Drivetech</description>
         <name>Is_the_case_related_to_PRF_Order</name>
         <label>Is the case related to PRF (Order)</label>
-        <locationX>446</locationX>
+        <locationX>1194</locationX>
         <locationY>755</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -53,7 +53,7 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Close_Account</targetReference>
+                <targetReference>Which_Sector</targetReference>
             </connector>
             <label>Close DT Account</label>
         </rules>
@@ -76,7 +76,7 @@
     <decisions>
         <name>Status_changed</name>
         <label>Status changed?</label>
-        <locationX>908</locationX>
+        <locationX>2030</locationX>
         <locationY>431</locationY>
         <defaultConnectorLabel>No, status not changed.</defaultConnectorLabel>
         <rules>
@@ -152,6 +152,120 @@
             <label>Yes, Status updated (to something not Closed)</label>
         </rules>
     </decisions>
+    <decisions>
+        <name>Which_Sector</name>
+        <label>Which Sector</label>
+        <locationX>1106</locationX>
+        <locationY>863</locationY>
+        <defaultConnector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Drivetech</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Drivetech</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Drivetech_Close_Account</targetReference>
+            </connector>
+            <label>Drivetech</label>
+        </rules>
+        <rules>
+            <name>Vixa</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>AAX</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Vixa_Close_Account</targetReference>
+            </connector>
+            <label>Vixa</label>
+        </rules>
+        <rules>
+            <name>Roadside</name>
+            <conditionLogic>or</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>FI&amp;P</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>OEM</stringValue>
+                </rightValue>
+            </conditions>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Fleet &amp; Leasing</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Roadside_Close_Account</targetReference>
+            </connector>
+            <label>Roadside</label>
+        </rules>
+        <rules>
+            <name>SMR</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Prestige</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>SMR_Close_Account</targetReference>
+            </connector>
+            <label>SMR</label>
+        </rules>
+        <rules>
+            <name>Accident_Management</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Accident Management</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Accident_Close_Account</targetReference>
+            </connector>
+            <label>Accident Management</label>
+        </rules>
+        <rules>
+            <name>Police</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Commissioning Force</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Police_Close_Account</targetReference>
+            </connector>
+            <label>Police</label>
+        </rules>
+    </decisions>
     <description>Updating of cases &amp; related records</description>
     <environments>Default</environments>
     <formulas>
@@ -184,7 +298,7 @@
         <description>Get &apos;Close Case&apos; Milestone to allow us to isolate/avoid it in this flow.</description>
         <name>Get_Close_Case_Milestone</name>
         <label>Get &apos;Close Case&apos; Milestone</label>
-        <locationX>908</locationX>
+        <locationX>2030</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -203,15 +317,15 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordUpdates>
-        <name>Close_Account</name>
-        <label>Close Account</label>
-        <locationX>314</locationX>
-        <locationY>863</locationY>
+        <name>Accident_Close_Account</name>
+        <label>Accident Close Account</label>
+        <locationX>1370</locationX>
+        <locationY>971</locationY>
         <connector>
-            <targetReference>Update_Related_DT_Contracts_to_Expired</targetReference>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
         </connector>
         <inputAssignments>
-            <field>Account_Closed_Drivetech__c</field>
+            <field>Account_Closed_Accident_Management__c</field>
             <value>
                 <booleanValue>true</booleanValue>
             </value>
@@ -221,7 +335,7 @@
     <recordUpdates>
         <name>Copy_1_of_Update_Case_Milestone_to_Completed</name>
         <label>Update Case Milestone to Completed</label>
-        <locationX>1106</locationX>
+        <locationX>2602</locationX>
         <locationY>647</locationY>
         <filterLogic>and</filterLogic>
         <filters>
@@ -254,9 +368,73 @@
         <object>CaseMilestone</object>
     </recordUpdates>
     <recordUpdates>
+        <name>Drivetech_Close_Account</name>
+        <label>Drivetech Close Account</label>
+        <locationX>314</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Closed_Drivetech__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Police_Close_Account</name>
+        <label>Police Close Account</label>
+        <locationX>1634</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Closed_Police__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Roadside_Close_Account</name>
+        <label>Roadside Close Account</label>
+        <locationX>842</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Closed_Roadside__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>SMR_Close_Account</name>
+        <label>SMR Close Account</label>
+        <locationX>1106</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Closed_SMR__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Update_All_Milestone_Completed</name>
         <label>Update All Milestone Completed</label>
-        <locationX>446</locationX>
+        <locationX>1194</locationX>
         <locationY>647</locationY>
         <connector>
             <targetReference>Is_the_case_related_to_PRF_Order</targetReference>
@@ -272,7 +450,7 @@
     <recordUpdates>
         <name>Update_All_Milestone_Completed_to_FALSE</name>
         <label>Update &apos;All Milestone Completed&apos; to FALSE</label>
-        <locationX>1106</locationX>
+        <locationX>2602</locationX>
         <locationY>539</locationY>
         <connector>
             <targetReference>Copy_1_of_Update_Case_Milestone_to_Completed</targetReference>
@@ -288,7 +466,7 @@
     <recordUpdates>
         <name>Update_Case_Milestone_to_Completed</name>
         <label>Update Case Milestone to Completed</label>
-        <locationX>446</locationX>
+        <locationX>1194</locationX>
         <locationY>539</locationY>
         <connector>
             <targetReference>Update_All_Milestone_Completed</targetReference>
@@ -345,16 +523,19 @@
         <object>Order</object>
     </recordUpdates>
     <recordUpdates>
-        <name>Update_Related_DT_Contracts_to_Expired</name>
-        <label>Update Related DT  Contracts to Expired</label>
-        <locationX>314</locationX>
-        <locationY>971</locationY>
+        <name>Update_Related_Sector_Contracts_to_Expired</name>
+        <label>Update Related Sector Contracts to Expired</label>
+        <locationX>1106</locationX>
+        <locationY>1163</locationY>
+        <connector>
+            <targetReference>Update_Relevant_Sector_Opportunities</targetReference>
+        </connector>
         <filterLogic>and</filterLogic>
         <filters>
             <field>Sector__c</field>
             <operator>EqualTo</operator>
             <value>
-                <stringValue>Drivetech</stringValue>
+                <elementReference>$Record.Sector__c</elementReference>
             </value>
         </filters>
         <filters>
@@ -378,8 +559,66 @@
         </inputAssignments>
         <inputReference>$Record.Account.Contracts</inputReference>
     </recordUpdates>
+    <recordUpdates>
+        <name>Update_Relevant_Sector_Opportunities</name>
+        <label>Update Relevant Sector Opportunities</label>
+        <locationX>1106</locationX>
+        <locationY>1271</locationY>
+        <filterLogic>(1 AND 2 AND 3) AND 4</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Won</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Lost</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>StageName</field>
+            <operator>NotEqualTo</operator>
+            <value>
+                <stringValue>Closed Withdrawn</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Sector__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Sector__c</elementReference>
+            </value>
+        </filters>
+        <inputAssignments>
+            <field>StageName</field>
+            <value>
+                <stringValue>Closed Withdrawn</stringValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account.Opportunities</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Vixa_Close_Account</name>
+        <label>Vixa Close Account</label>
+        <locationX>578</locationX>
+        <locationY>971</locationY>
+        <connector>
+            <targetReference>Update_Related_Sector_Contracts_to_Expired</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Account_Closed_VIXA__c</field>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Account</inputReference>
+    </recordUpdates>
     <start>
-        <locationX>782</locationX>
+        <locationX>1904</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Close_Case_Milestone</targetReference>
