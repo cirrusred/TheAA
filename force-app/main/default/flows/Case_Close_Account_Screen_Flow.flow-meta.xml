@@ -3,10 +3,98 @@
     <apiVersion>61.0</apiVersion>
     <areMetricsLoggedToDataCloud>false</areMetricsLoggedToDataCloud>
     <assignments>
+        <name>Assign_Case_Type</name>
+        <label>Assign Case Type</label>
+        <locationX>182</locationX>
+        <locationY>758</locationY>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Type</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Type</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Case_Category_Reason__c</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Case_Type_Reason</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Create_Case</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
+        <name>Business_Services_Close_Account_Case_Values</name>
+        <label>Business Services Close Account Case Values</label>
+        <locationX>314</locationX>
+        <locationY>458</locationY>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Origin</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>Internal - Account Management</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Priority</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>High</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Status</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <stringValue>New</stringValue>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.SuppliedEmail</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>$User.Email</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.OwnerId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Triggering_Acct.Owner.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.AccountId</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>Get_Triggering_Acct.Id</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.SuppliedName</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>fxCaseName</elementReference>
+            </value>
+        </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CloseAccountSubject</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Request_Account_Closure</targetReference>
+        </connector>
+    </assignments>
+    <assignments>
         <name>Close_Account_Case_Values</name>
         <label>Close Account Case Values</label>
-        <locationX>176</locationX>
-        <locationY>350</locationY>
+        <locationX>50</locationX>
+        <locationY>458</locationY>
         <assignmentItems>
             <assignToReference>VarCaseRecord.Origin</assignToReference>
             <operator>Assign</operator>
@@ -56,10 +144,162 @@
                 <elementReference>fxCaseName</elementReference>
             </value>
         </assignmentItems>
+        <assignmentItems>
+            <assignToReference>VarCaseRecord.Subject</assignToReference>
+            <operator>Assign</operator>
+            <value>
+                <elementReference>CloseAccountSubject</elementReference>
+            </value>
+        </assignmentItems>
         <connector>
             <targetReference>Request_Account_Closure</targetReference>
         </connector>
     </assignments>
+    <choices>
+        <name>BadLeaver</name>
+        <choiceText>Account Closure - Bad leaver</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Account Closure - Bad leaver</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>DoNotTouch</name>
+        <choiceText>Account Closure - Do Not Touch</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Account Closure - Do Not Touch</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>DTclosingduetonoactivityUnabletomakecontact</name>
+        <choiceText>DT closing due to no activity/Unable to make contact</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>DT closing due to no activity/Unable to make contact</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>GoodLeaver</name>
+        <choiceText>Account Closure - Good Leaver</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Account Closure - Good Leaver</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>InAdministrationCeasedtrading</name>
+        <choiceText>In Administration/Ceased trading</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>In Administration/Ceased trading</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Internalcostsavings</name>
+        <choiceText>Internal cost savings/budget restraints</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Internal cost savings/budget restraints</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Interventionquery</name>
+        <choiceText>Intervention query (text/video/Elearning)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Intervention query (text/video/Elearning)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Leavingintroducerleasingprovider</name>
+        <choiceText>Leaving introducer/leasing provider</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Leaving introducer/leasing provider</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Movedtodifferentproviderpricerelated</name>
+        <choiceText>Moved to different provider - price related</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Moved to different provider - price related</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Nolongerrequireservice</name>
+        <choiceText>No longer require service(s)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>No longer require service(s)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Poorinternalcomplianceuptakeofservice</name>
+        <choiceText>Poor internal compliance/uptake of service(s)</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Poor internal compliance/uptake of service(s)</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Poorsystemperformance</name>
+        <choiceText>Poor system performance</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Poor system performance</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Takingserviceinhouse</name>
+        <choiceText>Taking service in-house</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Taking service in-house</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Tender</name>
+        <choiceText>Tender</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Tender</stringValue>
+        </value>
+    </choices>
+    <choices>
+        <name>Traineravailability</name>
+        <choiceText>Trainer availability</choiceText>
+        <dataType>String</dataType>
+        <value>
+            <stringValue>Trainer availability</stringValue>
+        </value>
+    </choices>
+    <decisions>
+        <name>Drivetech_or_Business_Services</name>
+        <label>Drivetech or Business Services?</label>
+        <locationX>182</locationX>
+        <locationY>350</locationY>
+        <defaultConnector>
+            <targetReference>Business_Services_Close_Account_Case_Values</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
+        <rules>
+            <name>Drivetech</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>Get_Triggering_Acct.Sector__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Drivetech</stringValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Close_Account_Case_Values</targetReference>
+            </connector>
+            <label>Drivetech</label>
+        </rules>
+    </decisions>
     <description>Screen flow for user to request case closures</description>
     <environments>Default</environments>
     <formulas>
@@ -91,8 +331,8 @@
     <recordCreates>
         <name>Create_Case</name>
         <label>Create Case</label>
-        <locationX>176</locationX>
-        <locationY>566</locationY>
+        <locationX>182</locationX>
+        <locationY>866</locationY>
         <connector>
             <targetReference>Account_Closure_Case_Created</targetReference>
         </connector>
@@ -101,11 +341,11 @@
     <recordLookups>
         <name>Get_Tell_me_More_Q</name>
         <label>Get Tell me More Q</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>242</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
-            <targetReference>Close_Account_Case_Values</targetReference>
+            <targetReference>Drivetech_or_Business_Services</targetReference>
         </connector>
         <filterLogic>and</filterLogic>
         <filters>
@@ -129,7 +369,7 @@
     <recordLookups>
         <name>Get_Triggering_Acct</name>
         <label>Get Triggering Acct</label>
-        <locationX>176</locationX>
+        <locationX>182</locationX>
         <locationY>134</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -150,8 +390,8 @@
     <screens>
         <name>Account_Closure_Case_Created</name>
         <label>Account Closure Case Created</label>
-        <locationX>176</locationX>
-        <locationY>674</locationY>
+        <locationX>182</locationX>
+        <locationY>974</locationY>
         <allowBack>true</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
@@ -175,13 +415,13 @@
         <description>Screen flow for users to request Account Closure</description>
         <name>Request_Account_Closure</name>
         <label>Request Account Closure</label>
-        <locationX>176</locationX>
-        <locationY>458</locationY>
+        <locationX>182</locationX>
+        <locationY>650</locationY>
         <allowBack>false</allowBack>
         <allowFinish>true</allowFinish>
         <allowPause>true</allowPause>
         <connector>
-            <targetReference>Create_Case</targetReference>
+            <targetReference>Assign_Case_Type</targetReference>
         </connector>
         <fields>
             <name>CompleteAllFieldsScreen</name>
@@ -214,7 +454,7 @@
             <fieldType>ObjectProvided</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <objectFieldReference>VarCaseRecord.Type</objectFieldReference>
+            <objectFieldReference>VarCaseRecord.Sector__c</objectFieldReference>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -225,10 +465,15 @@
             </styleProperties>
         </fields>
         <fields>
-            <fieldType>ObjectProvided</fieldType>
+            <name>Case_Type</name>
+            <choiceReferences>GoodLeaver</choiceReferences>
+            <choiceReferences>BadLeaver</choiceReferences>
+            <choiceReferences>DoNotTouch</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Type</fieldText>
+            <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
-            <isRequired>false</isRequired>
-            <objectFieldReference>VarCaseRecord.Case_Category_Reason__c</objectFieldReference>
+            <isRequired>true</isRequired>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -239,10 +484,24 @@
             </styleProperties>
         </fields>
         <fields>
-            <fieldType>ObjectProvided</fieldType>
+            <name>Case_Type_Reason</name>
+            <choiceReferences>Interventionquery</choiceReferences>
+            <choiceReferences>Internalcostsavings</choiceReferences>
+            <choiceReferences>DTclosingduetonoactivityUnabletomakecontact</choiceReferences>
+            <choiceReferences>Nolongerrequireservice</choiceReferences>
+            <choiceReferences>InAdministrationCeasedtrading</choiceReferences>
+            <choiceReferences>Leavingintroducerleasingprovider</choiceReferences>
+            <choiceReferences>Traineravailability</choiceReferences>
+            <choiceReferences>Poorsystemperformance</choiceReferences>
+            <choiceReferences>Movedtodifferentproviderpricerelated</choiceReferences>
+            <choiceReferences>Poorinternalcomplianceuptakeofservice</choiceReferences>
+            <choiceReferences>Tender</choiceReferences>
+            <choiceReferences>Takingserviceinhouse</choiceReferences>
+            <dataType>String</dataType>
+            <fieldText>Case Type Reason</fieldText>
+            <fieldType>DropdownBox</fieldType>
             <inputsOnNextNavToAssocScrn>UseStoredValues</inputsOnNextNavToAssocScrn>
             <isRequired>false</isRequired>
-            <objectFieldReference>VarCaseRecord.Subject</objectFieldReference>
             <styleProperties>
                 <verticalAlignment>
                     <stringValue>top</stringValue>
@@ -270,13 +529,18 @@
         <showHeader>true</showHeader>
     </screens>
     <start>
-        <locationX>50</locationX>
+        <locationX>56</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_Triggering_Acct</targetReference>
         </connector>
     </start>
     <status>Active</status>
+    <textTemplates>
+        <name>CloseAccountSubject</name>
+        <isViewedAsPlainText>true</isViewedAsPlainText>
+        <text>Close Account Request - {!Get_Triggering_Acct.Name}</text>
+    </textTemplates>
     <variables>
         <name>recordId</name>
         <dataType>String</dataType>
