@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Status_Vixa_Pro__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(  Account_Closed_VIXA__c  == TRUE, &quot;Closed&quot;,
+IF(
+    Active_Contracts_Vixa_Pro__c &gt;= 1,
+    &quot;Customer&quot;,
+    IF(
+        Contracts_in_Review_Vixa_Pro__c &gt;= 1,
+        &quot;In Contract Review&quot;,
+        IF(
+            AND(
+                Active_Contracts_Vixa_Pro__c = 0,
+                Expired_Contracts_Vixa_Pro__c &gt;= 1
+            ),
+            &quot;Lapsed&quot;,
+            &quot;Prospect&quot;
+        )
+    )
+))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Status (Vixa Pro)</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>
