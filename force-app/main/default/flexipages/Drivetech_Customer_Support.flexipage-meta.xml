@@ -46,6 +46,10 @@
                     <value>true</value>
                 </componentInstanceProperties>
                 <componentInstanceProperties>
+                    <name>hideSlackAction</name>
+                    <value>false</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
                     <name>numVisibleActions</name>
                     <value>6</value>
                 </componentInstanceProperties>
@@ -340,6 +344,16 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Sector__c</fieldItem>
+                <identifier>RecordSector_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-c5002f4c-38f7-458e-9383-09b480601190</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -392,6 +406,23 @@
                 </fieldInstanceProperties>
                 <fieldItem>Record.ContactEmail</fieldItem>
                 <identifier>RecordContactEmailField</identifier>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Mandatory_Stakeholders_notified__c</fieldItem>
+                <identifier>RecordMandatory_Stakeholders_notified_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Account.Sector__c}</leftValue>
+                        <operator>NE</operator>
+                        <rightValue>Drivetech</rightValue>
+                    </criteria>
+                </visibilityRule>
             </fieldInstance>
         </itemInstances>
         <name>Facet-efde9b5e-d5e8-4936-8e25-6b76de075bf2</name>
