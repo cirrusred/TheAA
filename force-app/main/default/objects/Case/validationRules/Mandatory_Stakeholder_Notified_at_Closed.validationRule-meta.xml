@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Mandatory_Stakeholder_Notified_at_Closed</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND( NOT( ISPICKVAL(Account.Sector__c , &quot;Drivetech&quot;)), 
+ISPICKVAL( Status , &quot;Closed&quot;),
+Mandatory_Stakeholders_notified__c = FALSE)</errorConditionFormula>
+    <errorMessage>Stakeholder notification confirmation is required before an Account can be closed.</errorMessage>
+</ValidationRule>
