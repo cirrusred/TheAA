@@ -99,6 +99,10 @@
                 <behavior>Edit</behavior>
                 <field>FRM_Customer_Types__c</field>
             </layoutItems>
+            <layoutItems>
+                <behavior>Edit</behavior>
+                <field>DQM_Platform__c</field>
+            </layoutItems>
         </layoutColumns>
         <layoutColumns>
             <layoutItems>

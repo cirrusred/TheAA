@@ -1861,6 +1861,16 @@
                 <identifier>RecordDriverMetrics_ID__cField</identifier>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.DQM_ID__c</fieldItem>
+                <identifier>RecordDQM_ID_cField</identifier>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-2d71c448-46d7-408e-95c7-8287ef99acc6</name>
         <type>Facet</type>
     </flexiPageRegions>
