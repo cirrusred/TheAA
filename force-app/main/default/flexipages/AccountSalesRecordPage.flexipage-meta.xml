@@ -270,6 +270,23 @@
                 </visibilityRule>
             </fieldInstance>
         </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.Forecast_Revenue__c</fieldItem>
+                <identifier>RecordForecast_Revenue_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Sector_at_Risk__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Drivetech</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
         <name>Facet-3069c18d-9b45-43f5-a180-73105be71768</name>
         <type>Facet</type>
     </flexiPageRegions>
@@ -348,6 +365,27 @@
                 </componentInstanceProperties>
                 <componentName>runtime_sales_merge:mergeCandidatesPreviewCard</componentName>
                 <identifier>runtime_sales_merge_mergeCandidatesPreviewCard2</identifier>
+            </componentInstance>
+        </itemInstances>
+        <itemInstances>
+            <componentInstance>
+                <componentInstanceProperties>
+                    <name>decorate</name>
+                    <value>true</value>
+                </componentInstanceProperties>
+                <componentInstanceProperties>
+                    <name>richTextValue</name>
+                    <value>&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;color: rgb(68, 68, 68); font-size: 18px;&quot;&gt;🔔📢 &lt;/strong&gt;&lt;strong style=&quot;color: rgb(135, 123, 210); font-size: 18px;&quot;&gt;BAD LEAVER DRIVETECH&lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;/p&gt;&lt;p style=&quot;text-align: center;&quot;&gt;&lt;strong style=&quot;font-size: 12px; color: rgb(135, 123, 210);&quot;&gt;This account has been closed and identified as a Bad Leaver. Please review the related case before attempting any engagement or account-related activity.&lt;/strong&gt;&lt;/p&gt;</value>
+                </componentInstanceProperties>
+                <componentName>flexipage:richText</componentName>
+                <identifier>flexipage_richText9</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Bad_Leaver__c}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>true</rightValue>
+                    </criteria>
+                </visibilityRule>
             </componentInstance>
         </itemInstances>
         <itemInstances>
@@ -664,6 +702,23 @@
                     <name>uiBehavior</name>
                     <value>none</value>
                 </fieldInstanceProperties>
+                <fieldItem>Record.Annual_Contract_Value_Total__c</fieldItem>
+                <identifier>RecordAnnual_Contract_Value_Total_cField2</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Core Roadside Account</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
                 <fieldItem>Record.Total_Open_Opportunity_Value__c</fieldItem>
                 <identifier>RecordTotal_Open_Opportunity_Value__cField</identifier>
             </fieldInstance>
@@ -713,9 +768,26 @@
             </fieldInstance>
         </itemInstances>
         <itemInstances>
+            <fieldInstance>
+                <fieldInstanceProperties>
+                    <name>uiBehavior</name>
+                    <value>none</value>
+                </fieldInstanceProperties>
+                <fieldItem>Record.PFY_Annual_Revenue__c</fieldItem>
+                <identifier>RecordPFY_Annual_Revenue_cField</identifier>
+                <visibilityRule>
+                    <criteria>
+                        <leftValue>{!Record.Type}</leftValue>
+                        <operator>EQUAL</operator>
+                        <rightValue>Core Roadside Account</rightValue>
+                    </criteria>
+                </visibilityRule>
+            </fieldInstance>
+        </itemInstances>
+        <itemInstances>
             <componentInstance>
                 <componentName>flexipage:blankSpace</componentName>
-                <identifier>flexipage_blankSpace4</identifier>
+                <identifier>flexipage_blankSpace6</identifier>
             </componentInstance>
         </itemInstances>
         <itemInstances>

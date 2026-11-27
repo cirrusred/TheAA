@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Forecast_Revenue__c</fullName>
+    <inlineHelpText>Mandatory when a Drivetech contract is identified as At Risk. Enter the forecast revenue expected from this account for the next financial year.</inlineHelpText>
+    <label>Forecast Revenue</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Currency</type>
+</CustomField>
