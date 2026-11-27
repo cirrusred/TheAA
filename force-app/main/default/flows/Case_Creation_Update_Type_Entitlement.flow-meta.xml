@@ -4,7 +4,7 @@
         <description>Send email to sales support &amp; internal.businesssupport@drivetech.co.uk to notify that reuest is in</description>
         <name>Account_Close_Notification</name>
         <label>Account Close Notification</label>
-        <locationX>2536</locationX>
+        <locationX>2954</locationX>
         <locationY>1079</locationY>
         <actionName>Case.Account_Close_Request</actionName>
         <actionType>emailAlert</actionType>
@@ -24,7 +24,7 @@
     <actionCalls>
         <name>Acknowledge_Case_Commercial_Bookings</name>
         <label>Acknowledge Case - Commercial Bookings</label>
-        <locationX>776</locationX>
+        <locationX>1194</locationX>
         <locationY>1403</locationY>
         <actionName>Case.Case_Is_Created_Commercial_Booklings</actionName>
         <actionType>emailAlert</actionType>
@@ -44,7 +44,7 @@
     <actionCalls>
         <name>Acknowledge_Case_Commercial_Support</name>
         <label>Acknowledge Case - Commercial Support</label>
-        <locationX>336</locationX>
+        <locationX>754</locationX>
         <locationY>1511</locationY>
         <actionName>Case.Case_Is_Created_Commercial_Support</actionName>
         <actionType>emailAlert</actionType>
@@ -64,7 +64,7 @@
     <actionCalls>
         <name>Acknowledge_Case_International_Support</name>
         <label>Acknowledge Case - International Support</label>
-        <locationX>1216</locationX>
+        <locationX>1634</locationX>
         <locationY>1403</locationY>
         <actionName>Case.Case_Is_Created_International_Support</actionName>
         <actionType>emailAlert</actionType>
@@ -84,7 +84,7 @@
     <actionCalls>
         <name>Acknowledge_Case_Product_Support</name>
         <label>Acknowledge Case - Product Support</label>
-        <locationX>1656</locationX>
+        <locationX>2074</locationX>
         <locationY>1403</locationY>
         <actionName>Case.Case_Is_Created_Product_Support</actionName>
         <actionType>emailAlert</actionType>
@@ -104,7 +104,7 @@
     <actionCalls>
         <name>Acknowledgement_Email_SDM</name>
         <label>Acknowledgement Email - SDM</label>
-        <locationX>2096</locationX>
+        <locationX>2514</locationX>
         <locationY>1403</locationY>
         <actionName>Case.Case_Is_Created_SDM</actionName>
         <actionType>emailAlert</actionType>
@@ -124,7 +124,7 @@
     <actionCalls>
         <name>Acknowledgement_Kinto_Risk_Case</name>
         <label>Acknowledgement - Kinto Risk Case</label>
-        <locationX>72</locationX>
+        <locationX>490</locationX>
         <locationY>1511</locationY>
         <actionName>Case.Case_Is_Created_Kinto_Risk_Management</actionName>
         <actionType>emailAlert</actionType>
@@ -145,7 +145,7 @@
         <description>Notify Implementation of an Account Change</description>
         <name>Send_Email_to_Implementation</name>
         <label>Send Email to Implementation</label>
-        <locationX>2800</locationX>
+        <locationX>3482</locationX>
         <locationY>1295</locationY>
         <actionName>Case.Account_Change_Requested</actionName>
         <actionType>emailAlert</actionType>
@@ -167,7 +167,7 @@
     <assignments>
         <name>Assign_Entitlement</name>
         <label>Assign Entitlement</label>
-        <locationX>2134</locationX>
+        <locationX>2684</locationX>
         <locationY>863</locationY>
         <assignmentItems>
             <assignToReference>$Record.EntitlementId</assignToReference>
@@ -183,7 +183,7 @@
     <assignments>
         <name>Assign_Initial_Q_Commercial_Bookings</name>
         <label>Assign Initial Q - Commercial Bookings</label>
-        <locationX>688</locationX>
+        <locationX>1106</locationX>
         <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>$Record.Case_Queue__c</assignToReference>
@@ -200,7 +200,7 @@
         <description>Assigns initial queue to a &apos;Initial Case Queue&apos;</description>
         <name>Assign_Initial_Q_Commercial_Support</name>
         <label>Assign Initial Q - Commercial Support</label>
-        <locationX>50</locationX>
+        <locationX>468</locationX>
         <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>$Record.Case_Queue__c</assignToReference>
@@ -216,7 +216,7 @@
     <assignments>
         <name>Assign_Initial_Q_International_Support</name>
         <label>Assign Initial Q - International Support</label>
-        <locationX>1128</locationX>
+        <locationX>1546</locationX>
         <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>$Record.Case_Queue__c</assignToReference>
@@ -232,7 +232,7 @@
     <assignments>
         <name>Assign_Initial_Q_Product_Support</name>
         <label>Assign Initial Q - Product Support</label>
-        <locationX>1568</locationX>
+        <locationX>1986</locationX>
         <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>$Record.Case_Queue__c</assignToReference>
@@ -248,7 +248,7 @@
     <assignments>
         <name>Assign_Initial_Q_SDM</name>
         <label>Assign Initial Q - SDM</label>
-        <locationX>2008</locationX>
+        <locationX>2426</locationX>
         <locationY>1187</locationY>
         <assignmentItems>
             <assignToReference>$Record.Case_Queue__c</assignToReference>
@@ -272,7 +272,7 @@
     <decisions>
         <name>Case_Queue_Owner</name>
         <label>Case Queue Owner</label>
-        <locationX>1205</locationX>
+        <locationX>1623</locationX>
         <locationY>1079</locationY>
         <defaultConnector>
             <targetReference>Update_Case</targetReference>
@@ -357,7 +357,7 @@
     <decisions>
         <name>Copy_1_of_Copy_1_of_From_Email_Address_check</name>
         <label>Email Address check - International</label>
-        <locationX>1128</locationX>
+        <locationX>1546</locationX>
         <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Acknowledge_Case_International_Support</targetReference>
@@ -438,7 +438,7 @@
     <decisions>
         <name>Email_Address_check_Bookings</name>
         <label>Email Address check - Bookings</label>
-        <locationX>688</locationX>
+        <locationX>1106</locationX>
         <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Acknowledge_Case_Commercial_Bookings</targetReference>
@@ -519,7 +519,7 @@
     <decisions>
         <name>Email_Address_check_Product_Support</name>
         <label>Email Address check - Product Support</label>
-        <locationX>1568</locationX>
+        <locationX>1986</locationX>
         <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Acknowledge_Case_Product_Support</targetReference>
@@ -600,7 +600,7 @@
     <decisions>
         <name>Email_Address_check_SDM</name>
         <label>Email Address check - SDM</label>
-        <locationX>2008</locationX>
+        <locationX>2426</locationX>
         <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Acknowledgement_Email_SDM</targetReference>
@@ -689,7 +689,7 @@
         <description>Is the case from a customer</description>
         <name>External_or_Internal_Case</name>
         <label>External or Internal Case</label>
-        <locationX>2134</locationX>
+        <locationX>2684</locationX>
         <locationY>971</locationY>
         <defaultConnector>
             <targetReference>Update_Case</targetReference>
@@ -749,6 +749,14 @@
                     <stringValue>Internal - PRF</stringValue>
                 </rightValue>
             </conditions>
+            <connector>
+                <targetReference>Get_Product_Support_Case_Queue</targetReference>
+            </connector>
+            <label>PRF - Internal</label>
+        </rules>
+        <rules>
+            <name>Account_Change</name>
+            <conditionLogic>and</conditionLogic>
             <conditions>
                 <leftValueReference>$Record.Type</leftValueReference>
                 <operator>EqualTo</operator>
@@ -757,15 +765,15 @@
                 </rightValue>
             </conditions>
             <connector>
-                <targetReference>Get_Product_Support_Case_Queue</targetReference>
+                <targetReference>Get_Implementation_Queue</targetReference>
             </connector>
-            <label>PRF - Internal</label>
+            <label>Account Change</label>
         </rules>
     </decisions>
     <decisions>
         <name>From_Email_Address_check</name>
         <label>From Email Address check</label>
-        <locationX>50</locationX>
+        <locationX>468</locationX>
         <locationY>1295</locationY>
         <defaultConnector>
             <targetReference>Kinto_Risk_Case_Received</targetReference>
@@ -840,7 +848,7 @@
         <description>Is the email Subject an autroresponse where cases should not be created?</description>
         <name>Is_email_an_Autoresponse</name>
         <label>Is email an Autoresponse?</label>
-        <locationX>883</locationX>
+        <locationX>1367</locationX>
         <locationY>647</locationY>
         <defaultConnector>
             <targetReference>Get_Entitlement_Process</targetReference>
@@ -904,7 +912,7 @@
     <decisions>
         <name>Is_it_Drivetech</name>
         <label>Is it Drivetech?</label>
-        <locationX>2061</locationX>
+        <locationX>2644</locationX>
         <locationY>539</locationY>
         <defaultConnectorLabel>Default Outcome</defaultConnectorLabel>
         <rules>
@@ -926,7 +934,7 @@
     <decisions>
         <name>Kinto_Risk_Case_Received</name>
         <label>Kinto Risk Case Received?</label>
-        <locationX>204</locationX>
+        <locationX>622</locationX>
         <locationY>1403</locationY>
         <defaultConnector>
             <targetReference>Acknowledge_Case_Commercial_Support</targetReference>
@@ -974,7 +982,7 @@
     <recordLookups>
         <name>Get_Entitlement_Process</name>
         <label>Get Entitlement Process</label>
-        <locationX>2134</locationX>
+        <locationX>2684</locationX>
         <locationY>755</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -993,10 +1001,38 @@
         <storeOutputAutomatically>true</storeOutputAutomatically>
     </recordLookups>
     <recordLookups>
+        <name>Get_Implementation_Queue</name>
+        <label>Get Implementation Queue</label>
+        <locationX>3482</locationX>
+        <locationY>1079</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Assign_to_Queue</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Type</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Queue</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>DeveloperName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Implementation</stringValue>
+            </value>
+        </filters>
+        <getFirstRecordOnly>true</getFirstRecordOnly>
+        <object>Group</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordLookups>
         <description>Gets the ID for the Product Support Case Queue</description>
         <name>Get_Product_Support_Case_Queue</name>
         <label>Get Product Support Case Queue</label>
-        <locationX>2800</locationX>
+        <locationX>3218</locationX>
         <locationY>1079</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1024,7 +1060,7 @@
     <recordLookups>
         <name>Get_User_from_Web_Email</name>
         <label>Get User from Web Email</label>
-        <locationX>2061</locationX>
+        <locationX>2644</locationX>
         <locationY>323</locationY>
         <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
         <connector>
@@ -1045,10 +1081,10 @@
     <recordUpdates>
         <name>Assign_Product_Support_Queue</name>
         <label>Assign Product Support Queue</label>
-        <locationX>2800</locationX>
+        <locationX>3218</locationX>
         <locationY>1187</locationY>
         <connector>
-            <targetReference>Send_Email_to_Implementation</targetReference>
+            <targetReference>Update_Case</targetReference>
         </connector>
         <inputAssignments>
             <field>Origin</field>
@@ -1065,9 +1101,25 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <recordUpdates>
+        <name>Assign_to_Queue</name>
+        <label>Assign to Queue</label>
+        <locationX>3482</locationX>
+        <locationY>1187</locationY>
+        <connector>
+            <targetReference>Send_Email_to_Implementation</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>OwnerId</field>
+            <value>
+                <elementReference>Get_Implementation_Queue.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
         <name>Assign_User_to_Case</name>
         <label>Assign User to Case</label>
-        <locationX>2061</locationX>
+        <locationX>2644</locationX>
         <locationY>431</locationY>
         <connector>
             <targetReference>Is_it_Drivetech</targetReference>
@@ -1083,7 +1135,7 @@
     <recordUpdates>
         <name>Update_Case</name>
         <label>Update Case</label>
-        <locationX>2134</locationX>
+        <locationX>2684</locationX>
         <locationY>1955</locationY>
         <inputAssignments>
             <field>EntitlementId</field>
@@ -1094,7 +1146,7 @@
         <inputReference>$Record</inputReference>
     </recordUpdates>
     <start>
-        <locationX>1935</locationX>
+        <locationX>2518</locationX>
         <locationY>0</locationY>
         <connector>
             <targetReference>Get_User_from_Web_Email</targetReference>
