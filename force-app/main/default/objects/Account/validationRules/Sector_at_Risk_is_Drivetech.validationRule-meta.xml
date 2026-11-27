@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Sector_at_Risk_is_Drivetech</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(  ISPICKVAL(Sector_at_Risk__c , &quot;Drivetech&quot;),  ISNULL( Forecast_Revenue__c ) )</errorConditionFormula>
+    <errorMessage>Forecast Revenue must be completed for Drivetech contracts that have been identified as At Risk. Please enter the forecast revenue for the next financial year.</errorMessage>
+</ValidationRule>
